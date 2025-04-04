@@ -262,3 +262,104 @@
   });
 
 })()
+
+// 平滑滚动
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
+
+// 滚动时显示动画
+window.addEventListener('scroll', function() {
+  const elements = document.querySelectorAll('.aos-init');
+  elements.forEach(el => {
+    const elTop = el.getBoundingClientRect().top;
+    if(elTop < window.innerHeight - 100) {
+      el.classList.add('aos-animate');
+    }
+  });
+
+  // 新增：模块渐显效果
+  const sections = document.querySelectorAll('section:not(#hero)');
+  sections.forEach(section => {
+    const sectionTop = section.getBoundingClientRect().top;
+    if(sectionTop < window.innerHeight - 100) {
+      section.classList.add('show');
+    }
+  });
+});
+
+// 新增：初始化设置
+document.addEventListener('DOMContentLoaded', function() {
+  // 设置背景图片
+  document.body.style.backgroundImage = "url('assets/img/background.png')";
+  document.body.style.backgroundAttachment = 'fixed';
+  document.body.style.backgroundSize = 'cover';
+  
+  // 初始显示可视区域内的模块
+  const visibleSections = document.querySelectorAll('section:not(#hero)');
+  visibleSections.forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if(rect.top < window.innerHeight) {
+      section.classList.add('show');
+    }
+  });
+});
+
+// 新增：图片懒加载
+const lazyImages = document.querySelectorAll('img[data-src]');
+const imageObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const img = entry.target;
+      img.src = img.dataset.src;
+      imageObserver.unobserve(img);
+    }
+  });
+});
+lazyImages.forEach(img => imageObserver.observe(img));
+
+// 在DOM加载完成后添加
+document.addEventListener('DOMContentLoaded', function() {
+  const footer = document.getElementById('footer');
+  
+  window.addEventListener('scroll', function() {
+    const scrollPosition = window.scrollY;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.body.clientHeight;
+    
+    if (scrollPosition + windowHeight > documentHeight - 100) {
+      footer.classList.add('show');
+    }
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // 时间线Swiper
+  const timelineSwiper = new Swiper('.timelineSwiper', {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    watchOverflow: true,
+    initialSlide: document.querySelectorAll('.swiper-slide').length - 1, // 默认显示最后一张
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+      disabledClass: 'swiper-button-disabled'
+    },
+    breakpoints: {
+      768: {
+        slidesPerView: 2,
+      },
+      992: {
+        slidesPerView: 3,
+      }
+    }
+  });
+});
