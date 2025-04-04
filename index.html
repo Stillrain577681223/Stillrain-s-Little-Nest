@@ -32,16 +32,22 @@
 
 <body data-aos-easing="ease-in-out" data-aos-duration="1000" data-aos-delay="0">
 
+  <!-- 在body开始处添加 -->
+  <div id="preloader">
+    <div class="loader"></div>
+  </div>
+
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
       <ul>
         <li><a href="#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>小窝首页</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>关于我</span></a></li>
-        <li><a href="#facts" class="nav-link scrollto"><i class="bi bi-award"></i> <span>成就</span></a></li>
-        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>这个网站使用的技术</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>我的相册</span></a></li>
-        <li><a href="#contact" class="nav-link scrollto active"><i class="bx bx-envelope"></i> <span>联系我</span></a></li>
+        <li><a href="#hobbies" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>我的兴趣</span></a></li>
+        <li><a href="#timeline" class="nav-link scrollto"><i class="bx bx-time"></i> <span>我的时间线</span></a></li>
+        <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>这个网站使用的语言</span></a></li>
+        <!--<li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>联系我</span></a></li>-->
+
       </ul>
     </nav><!-- .nav-menu -->
 
@@ -49,14 +55,9 @@
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center">
-    <div class="container aos-init aos-animate" data-aos="zoom-in" data-aos-delay="100">
+    <div class=" aos-init " data-aos="zoom-in" data-aos-delay="100">
       <h1>静雨轩-Stillrainの小窝</h1>
-      <p>一个初二的撅子生，喜欢<span class="typed" data-typed-items="做PPTOS(彳亍,做程序(雾,打游戏(大喜,简化系统(悲,听冬之花(好啊，很好啊)"></span><span class="typed-cursor" aria-hidden="true"></span></p>
-	<!--<p>江泽民同志逝世，享年96岁
-	<br>中国共产党中央委员会、中华人民共和国全国人民代表大会常务委员会、中华人民共和国国务院、中国人民政治协商会议全国委员会、中国共产党和中华人民共和国中央军事委员会，极其悲痛地向全党全军全国各族人民通告：
-	<br>我们敬爱的江泽民同志患白血病合并多脏器功能衰竭，抢救无效，于2022年11月30日12时13分在上海逝世，享年96岁。 
-	<br>江泽民同志是我党我军我国各族人民公认的享有崇高威望的卓越领导人，伟大的马克思主义者，伟大的无产阶级革命家、政治家、军事家、外交家，久经考验的共产主义战士，中国特色社会主义伟大事业的杰出领导者，党的第三代中央领导集体的核心，“三个代表”重要思想的主要创立者。
-	<br> 江泽民同志永垂不朽！</p>-->
+      <p><span class="typed" data-typed-items="不知道写啥，凑活着看吧,别老盯着我，我就这两句话"></span><span class="typed-cursor" aria-hidden="true"></span></p>
       <div class="social-links">
                 <a href="https://space.bilibili.com/577681223"><img src="images/bilibili logo.png" height="30px" width="30px" alt="instagram-logo"></a><!--Your instagram homepage link inser in place of "#"-->
                 <a href="https://y.qq.com/n/ryqq/singer/0007Uaqt3WuRDB"><img src="images/qqmusic logo.png" height="30px" width="30px" alt="facebook-logo"></a>
@@ -70,10 +71,11 @@
 
     <!-- ======= About Section ======= -->
     <section id="about" class="about">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
+      <div class="container aos-init " data-aos="fade-up">
 
         <div class="section-title">
-          <h2>关于我 About Me</h2>
+          <h2>关于我</h2>
+          <p>About me</p>
         </div>
 
         <div class="row">
@@ -87,81 +89,212 @@
                 <ul>
                   <li><img src="images/title.png"><strong>生日:<br>Birthday:</strong> <span>2009.08.16<br>16 August 2009</span></li>
                   <li><img src="images/title.png"><strong>网站域名:<br>Website Realm Name:</strong> <span>你现在就在这个网站里就不用问了吧<br>You don't need to ask the realm name in this website now</span></li>
-                  <li><img src="images/title.png"><strong>手机号码:<br>Phone Number:</strong> <span>+86 186 0066 3237</span></li>
+                  <li><img src="images/title.png"><strong>手机号码:<br>Phone Number:</strong> <span>+86 136 2138 1459</span></li>
                   <li><img src="images/title.png"><strong>QQ号码:<br>Tencent QQ Number:</strong> <span>2863970084</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
                   <li><img src="images/title.png"><strong>所在城市:<br>Location:</strong> <span>中国，北京<br>Beijing , CN</span></li>
-                  <li><img src="images/title.png"><strong>年龄:<br>Age:</strong> <span>13</span></li>
-                  <li><img src="images/title.png"><strong>学历:<br>Degree:</strong> <span>初中(持续更新中)<br>Junior high school (in continuous updating)</span></li>
-                  <li><img src="images/title.png"><strong>电子邮件:<br>Email:</strong> <span>S2863970084@outlook.com<br>yulongjie@longjieworkgroup.onmic<br>rosoft.com</span></li>
+                  <li><img src="images/title.png"><strong>年龄:<br>Age:</strong> <span id="age"></span></li>
+                  <script>
+                  function calculateAge(birthDate) {
+                    const today = new Date();
+                    const birth = new Date(birthDate);
+                    let age = today.getFullYear() - birth.getFullYear();
+                    const monthDiff = today.getMonth() - birth.getMonth();
+                    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birth.getDate())) {
+                      age--;
+                    }
+                    return age;
+                  }
+
+                  document.getElementById("age").innerHTML = calculateAge("2009-08-16") + "岁";
+                  </script>
+                  <li><img src="images/title.png"><strong>学历:<br>Degree:</strong> <span>高中(持续更新中)<br>High school (in continuous updating)</span></li>
+                  <li><img src="images/title.png"><strong>电子邮件:<br>Email:</strong> <span>S2863970084@outlook.com<br></span></li>
                 </ul>
               </div>
             </div>
             <p>
-              静雨轩，一个会Python和HTML的初二学生，CMK Studio创始人之一，Mr. Wang Studios成员，Xiaopeng Studio的...副室长？爱好及优点分别为：爱读书、做程序或网站、打游戏、做自媒体、精简系统、做PPTOS等；性格乐观开朗(屁！SCL90症状自评测试直接上379分，这还叫乐观开朗？)；精通关于电脑的大部分软硬件
+              静雨轩，一个会Python和HTML的高一学生；性格乐观开朗；精通关于电脑的大部分软硬件
             </p>
           </div>
         </div>
 
       </div>
     </section><!-- End About Section -->
+<!-- ======= About Section ======= -->
+<!-- ... 现有的关于我部分代码 ... -->
+<!-- ======= Skills Section ======= -->
+<!-- ...现有的技能部分代码... -->
 
-    <!-- ======= Facts Section ======= -->
-    <section id="facts" class="facts">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
-
-        <div class="section-title">
-          <h2>成就 Achivement</h2>
+<!-- ======= Hobbies Section ======= -->
+<section id="hobbies" class="hobbies section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>我的兴趣</h2>
+      <p>My hobbies</p>
+      <br>
+      <h4><strong>「生活中让我快乐的事情」</strong></h4>
+    </div>
+    
+    <div class="row d-flex">
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4">
+        <!-- 直接放置单个icon-box -->
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-code-alt"></i></div>
+          <h4>编程开发</h4>
+          <p>Python、HTML/CSS、JavaScript<br>喜欢开发小工具和网站</p>
         </div>
-
-        <div class="row">
-
-          <div class="col-lg-3 col-md-6">
-            <div class="count-box">
-              <i class="bi bi-emoji-smile"></i>
-              <span data-purecounter-start="0" data-purecounter-end="338" data-purecounter-duration="1" class="purecounter">0</span>
-              好评用户<br>Number of favorable comments from users
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-md-0">
-            <div class="count-box">
-              <i class="bi bi-journal-richtext"></i>
-              <span data-purecounter-start="0" data-purecounter-end="272" data-purecounter-duration="1" class="purecounter">0</span>
-              作品<br>Projects
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-headset"></i>
-              <span data-purecounter-start="0" data-purecounter-end="23352" data-purecounter-duration="1" class="purecounter">0</span>
-              服务支持时长<br>Service Support Hours
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 mt-5 mt-lg-0">
-            <div class="count-box">
-              <i class="bi bi-award"></i>
-              <span data-purecounter-start="0" data-purecounter-end="43" data-purecounter-duration="1" class="purecounter">0</span>
-              奖<br>Awards
-            </div>
-          </div>
-
-        </div>
-
       </div>
-    </section><!-- End Facts Section -->
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4">
+        <!-- 直接放置单个icon-box -->
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-music"></i></div>
+          <h4>音乐</h4>
+          <p>喜欢听歌和唱歌<br>偶尔也会尝试作曲</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-game"></i></div>
+          <h4>游戏</h4>
+          <p>Minecraft、原神等<br>享受游戏中的创造和探索</p>
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6 d-flex align-items-stretch mt-4">
+        <div class="icon-box">
+          <div class="icon"><i class="bx bx-camera"></i></div>
+          <h4>摄影</h4>
+          <p>记录生活中的美好瞬间<br>喜欢拍摄风景和日常</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======= Timeline Section ======= -->
+<section id="timeline" class="timeline section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>我的时间线</h2>
+      <p>My life timeline</p>
+      <br>
+      <h4><strong>重要事件与里程碑</strong></h4>
+    </div>
+
+    <div class="swiper timelineSwiper">
+      <div class="swiper-wrapper">
+        <!-- 时间线项目 -->
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2009年8月</h4>
+            <span>出生</span>
+            <p>破壳而出啦</p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2009年9月</h4>
+            <span>因重病住进儿童医院</span>
+            <p>儿研所都说没救了的那种，硬是被儿童医院救回来了</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2012年9月</h4>
+            <span>上幼儿园</span>
+            <p>我是爱上学的小朋友</p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2015年6月</h4>
+            <span>幼儿园毕业</span>
+            <p>我是大朋友了！</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2015年9月</h4>
+            <span>上小学咯</span>
+            <p>我是一年级的小豆包</p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2021年6月</h4>
+            <span>小学毕业</span>
+            <p>我终于不是小学生啦</p>
+          </div>
+        </div>
+        
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2021年9月</h4>
+            <span>上初中咯</span>
+            <p>初中好简单</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2021年12月</h4>
+            <span>个人主页建立</span>
+            <p>雏形初现</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2022年12月</h4>
+            <span>主页废弃，建立新主页</span>
+            <p>昙花二现</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2024年6月</h4>
+            <span>初中毕业</span>
+            <p>初中好难</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4>2024年9月</h4>
+            <span>人生废废</span>
+            <p>进入职高</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <div class="timeline-item">
+            <h4 id="current-date">今天</h4>
+            <span>今天</span>
+            <p>网站还在</p>
+          </div>
+        </div>
+
+        <!-- 可以继续添加更多时间线项目 -->
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+  </div>
+</section>
 
     <!-- ======= Skills Section ======= -->
     <section id="skills" class="skills section-bg">
-      <div class="container aos-init aos-animate" data-aos="fade-up">
+      <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>该网站使用的技术 Technology used by this website</h2>
+          <h2>该网站使用的技术</h2>
+          <p>Technologies used on this website</p>
         </div>
 
         <div class="row skills-content">
@@ -210,7 +343,7 @@
 
       </div>
     </section><!-- End Skills Section -->
-    <!-- ======= Portfolio Section ======= -->
+    <!-- ======= Portfolio Section =======
     <section id="portfolio" class="portfolio section-bg">
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
@@ -219,8 +352,9 @@
         </div>
  	   <a href="album.html"><button type="submit" style="background: #0563bb;display:block;margin:0 auto;border: 0;padding: 10px 35px;color: #fff;transition: 0.4s;border-radius: 50px;">前往相册(本操作需要跳转)</button>
 
-    </section><!-- End Portfolio Section -->
-    <!-- ======= Contact Section ======= -->
+    </section>End Portfolio Section -->
+    <!-- ======= Contact Section ======= 
+    <center>
     <section id="contact" class="contact">
       <div class="container aos-init aos-animate" data-aos="fade-up">
 
@@ -231,29 +365,26 @@
         <div class="row mt-1">
 
           <div class="col-lg-4">
-            <div class="info">
-              <div class="address">
-                <i class="bi bi-geo-alt"></i>
-                <h4>所在地点:<br>Location:</h4>
-                <p>中国，北京市昌平区<br>Changping District, Beijing, China</p>
+            <div class="contact-info">
+              <div class="info-box">
+                <i class="bx bx-envelope"></i>
+                <div>
+                  <h4>电子邮件</h4>
+                  <p>S2863970084@outlook.com</p>
+                  <p>yulongjie@longjieworkgroup.onmicrosoft.com</p>
+                </div>
               </div>
-
-              <div class="email">
-                <i class="bi bi-envelope"></i>
-                <h4>电子邮件:<br>Email:</h4>
-                <p>S2863970084@outlook.com<br>yulongjie@longjieworkgroup.onmicrosoft.com</p>
+              <div class="info-box">
+                <i class="bx bx-phone-call"></i>
+                <div>
+                  <h4>联系电话</h4>
+                  <p>+86 186 0066 3237</p>
+                </div>
               </div>
-
-              <div class="phone">
-                <i class="bi bi-phone"></i>
-                <h4>电话号码:<br>Call:</h4>
-                <p>+86 186 0066 3237</p>
-              </div>
-
             </div>
 
           </div>
-
+          
           <div class="col-lg-8 mt-5 mt-lg-0">
 
             <form action="forms/contact.php" method="post" role="form" class="php-email-form">
@@ -275,21 +406,32 @@
 		    <a href=""><button type="submit">发送消息</button></a>
             
 
-          </form></div></div></div></section><!-- End Contact Section --></main><!-- End #main -->
+          </form></div></div></div></section> End Contact Section --></main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
-<footer id="footer">      <h3>静雨轩-Stillrainの小窝</h3>
-      以下为联系方式
-<br>微信:Stillrain-001<br>QQ:2863970084<br>手机号:18600663237<br>哔哩哔哩:UID577681223<br>QQ音乐:静雨轩-Stillrain<div class="footer social-links"><a href="https://space.bilibili.com/577681223"><img src="images/bilibili logo.png" height="20px" width="20px" alt="instagram-logo"></a>
-                <a href="https://y.qq.com/n/ryqq/singer/0007Uaqt3WuRDB"><img src="images/qqmusic logo.png" height="20px" width="20px" alt="facebook-logo"></a>
-                <a href="tencent://message/?uin=2863970084&amp;Site=&amp;Menu=yes"><img src="images/qq logo.png" height="20px" width="20px" alt="twitter-logo"></a>
-      </div>       
-<div class="copyright">
-        © <span id="year"></span> Copyright <strong><span>Computer Killer Office&amp;Xiaopeng Studio</span></strong>. All Rights Reserved
+    <footer id="footer">
+      <div class="copyright">
+        © <span id="year"></span> Copyright <strong><span>静雨轩-Stillrain</span></strong>. All Rights Reserved
       </div>
 
 <script>
-document.getElementById("year").innerHTML = new Date().getFullYear();
+// 显示当前日期（新增代码）
+function formatDate(date) {
+  const year = date.getFullYear();
+  const month = date.getMonth() + 1;
+  const day = date.getDate();
+  return `${year}年${month}月${day}日`;
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+  // 原有年份显示代码保持不变
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+  
+  // 新增时间线日期显示
+  const today = new Date();
+  document.getElementById("current-date").textContent = formatDate(today);
+  document.getElementById("current-date-span").textContent = formatDate(today);
+});
 </script>
       
     
