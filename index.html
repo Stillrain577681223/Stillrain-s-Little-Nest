@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-cmn-Hans"><head>
+<html lang="zh-cmn-Hans">
+<head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
@@ -37,6 +38,24 @@
     <div class="loader"></div>
   </div>
 
+  <!-- 通知栏 -->
+  <div style="display: flex;justify-content: center;">
+  <div class="alert-notice" style="display: flex;justify-content: center;border-radius: 10px; margin-top: 10px; width:95%;">
+    <div class="alert-content">
+      <i style="color: #fff;" class="bx bx-info-circle"></i>
+      <span style="color: #fff;">This site is foreigner-friendly. Please visit the </span>
+      <a href="index-en.html">English Website</a>
+    </div>
+    <i style="color: #fff;" class="bx bx-x close-btn"></i>
+  </div>
+</div>
+
+  <script>
+  document.querySelector('.alert-notice .close-btn').addEventListener('click', function() {
+    this.parentElement.style.display = 'none';
+  });
+  </script>
+
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav id="navbar" class="navbar nav-menu">
@@ -44,6 +63,7 @@
         <li><a href="#hero" class="nav-link scrollto"><i class="bx bx-home"></i> <span>小窝首页</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>关于我</span></a></li>
         <li><a href="#hobbies" class="nav-link scrollto"><i class="bx bx-heart"></i> <span>我的兴趣</span></a></li>
+        <li><a href="#music" class="nav-link scrollto"><i class="bx bx-music"></i> <span>我喜欢的歌</span></a></li>
         <li><a href="#timeline" class="nav-link scrollto"><i class="bx bx-time"></i> <span>我的时间线</span></a></li>
         <li><a href="#skills" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>这个网站使用的语言</span></a></li>
         <!--<li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>联系我</span></a></li>-->
@@ -75,28 +95,26 @@
 
         <div class="section-title">
           <h2>关于我</h2>
-          <p>About me</p>
         </div>
 
         <div class="row">
           <div class="col-lg-4">
-            <img src="assets/img/profile-img.jpg" class="img-fluid" alt="">
+            <img src="assets/img/profile-img.jpg" class="profile-img" id="" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content">
             <h3>静雨轩-Stillrain</h3>
             <div class="row">
               <div class="col-lg-6">
                 <ul>
-                  <li><img src="images/title.png"><strong>生日:<br>Birthday:</strong> <span>2009.08.16<br>16 August 2009</span></li>
-                  <li><img src="images/title.png"><strong>网站域名:<br>Website Realm Name:</strong> <span>你现在就在这个网站里就不用问了吧<br>You don't need to ask the realm name in this website now</span></li>
-                  <li><img src="images/title.png"><strong>手机号码:<br>Phone Number:</strong> <span>+86 136 2138 1459</span></li>
-                  <li><img src="images/title.png"><strong>QQ号码:<br>Tencent QQ Number:</strong> <span>2863970084</span></li>
+                  <li><img src="images/title.png"><strong>生日:</strong> <span>2009.08.16</span></li>
+
+                  <li><img src="images/title.png"><strong>QQ号码:</strong> <span>2863970084</span></li>
+                  <li><img src="images/title.png"><strong>所在城市:</strong> <span>中国，北京</span></li>
                 </ul>
               </div>
               <div class="col-lg-6">
                 <ul>
-                  <li><img src="images/title.png"><strong>所在城市:<br>Location:</strong> <span>中国，北京<br>Beijing , CN</span></li>
-                  <li><img src="images/title.png"><strong>年龄:<br>Age:</strong> <span id="age"></span></li>
+                  <li><img src="images/title.png"><strong>年龄:</strong> <span id="age"></span></li>
                   <script>
                   function calculateAge(birthDate) {
                     const today = new Date();
@@ -111,8 +129,8 @@
 
                   document.getElementById("age").innerHTML = calculateAge("2009-08-16") + "岁";
                   </script>
-                  <li><img src="images/title.png"><strong>学历:<br>Degree:</strong> <span>高中(持续更新中)<br>High school (in continuous updating)</span></li>
-                  <li><img src="images/title.png"><strong>电子邮件:<br>Email:</strong> <span>S2863970084@outlook.com<br></span></li>
+                  <li><img src="images/title.png"><strong>学历:</strong> <span>高中(持续更新中)</span></li>
+                  <li><img src="images/title.png"><strong>电子邮件:</strong> <span>S2863970084@outlook.com</span></li>
                 </ul>
               </div>
             </div>
@@ -134,9 +152,7 @@
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>我的兴趣</h2>
-      <p>My hobbies</p>
-      <br>
-      <h4><strong>「生活中让我快乐的事情」</strong></h4>
+      <h4>「生活中让我快乐的事情」</h4>
     </div>
     
     <div class="row d-flex">
@@ -145,7 +161,7 @@
         <div class="icon-box">
           <div class="icon"><i class="bx bx-code-alt"></i></div>
           <h4>编程开发</h4>
-          <p>Python、HTML/CSS、JavaScript<br>喜欢开发小工具和网站</p>
+          <p>Python、HTML/CSS<br>喜欢开发小工具和网站</p>
         </div>
       </div>
 
@@ -162,7 +178,7 @@
         <div class="icon-box">
           <div class="icon"><i class="bx bx-game"></i></div>
           <h4>游戏</h4>
-          <p>Minecraft、原神等<br>享受游戏中的创造和探索</p>
+          <p>GTAV 欧洲卡车模拟2等<br>享受驾驶的惬意</p>
         </div>
       </div>
 
@@ -177,14 +193,51 @@
   </div>
 </section>
 
+<!-- ======= 音乐播放器 ======= -->
+<section id="music" class="music section-bg">
+  <div class="container" data-aos="fade-up">
+    <div class="section-title">
+      <h2>音乐收藏</h2>
+      <h4>「值得让我单曲循环的歌曲」</h4>
+    </div>
+    <div class="custom-music-player">
+      <div class="audio-container">
+        <div class="album-art">
+          <img src="https://y.qq.com/music/photo_new/T002R300x300M000003zYGgk0u3Uiy_1.jpg?max_age=2592000" 
+               alt="专辑封面" 
+               class="album-cover">
+        </div>
+        <div class="player-content">
+          <div class="song-info-box">
+            <br>
+            <div class="song-title"><h4>俗话说</h4></div>
+            <div class="song-artist">张妙格</div>
+          </div>
+          <audio class="main-audio" src="https://ws6.stream.qqmusic.qq.com/O400001MVW0q0pqH2m.ogg?guid=7903136520&vkey=BA35DC6978677851CCA30C3E5A93C28F331FB3F312B5B633B77C8E409A7A8FC02F220A4530711E8AAD9431859D662AB79A501742FEB5954F__v21530b7bd&uin=2863970084&fromtag=120532">
+          </audio>
+          <div class="player-controls">
+            <div class="controls-container">
+              <div class="progress-controls" style="display: flex; align-items: center; gap: 15px; width: 100%;">
+                <div class="progress-container" style="flex-grow: 1; margin: 0 10px;">
+                  <div class="progress-bar"></div>
+                </div>
+                <span class="remaining-time" style="min-width: 55px; text-align: center;">-3:00</span>
+                <button class="play-btn" style="flex-shrink: 0;"><i class="bx bx-play"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+</section>
+
 <!-- ======= Timeline Section ======= -->
 <section id="timeline" class="timeline section-bg">
   <div class="container" data-aos="fade-up">
     <div class="section-title">
       <h2>我的时间线</h2>
-      <p>My life timeline</p>
-      <br>
-      <h4><strong>重要事件与里程碑</strong></h4>
+      <h4>重要事件与里程碑</h4>
     </div>
 
     <div class="swiper timelineSwiper">
@@ -293,8 +346,7 @@
       <div class="container aos-init" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>该网站使用的技术</h2>
-          <p>Technologies used on this website</p>
+          <h2>该网站使用的语言</h2>
         </div>
 
         <div class="row skills-content">
@@ -415,23 +467,28 @@
       </div>
 
 <script>
-// 显示当前日期（新增代码）
-function formatDate(date) {
-  const year = date.getFullYear();
+// 修改日期格式化函数
+function formatTimelineDate(date) {
+  const year = date.getFullYear()
   const month = date.getMonth() + 1;
   const day = date.getDate();
-  return `${year}年${month}月${day}日`;
+  return `${year}年${month}月${day}日`; // 新格式：X月X日
 }
 
 document.addEventListener('DOMContentLoaded', function() {
-  // 原有年份显示代码保持不变
-  document.getElementById("year").innerHTML = new Date().getFullYear();
-  
-  // 新增时间线日期显示
   const today = new Date();
-  document.getElementById("current-date").textContent = formatDate(today);
-  document.getElementById("current-date-span").textContent = formatDate(today);
+  const currentDateElement = document.getElementById("current-date");
+  
+  if(currentDateElement) {
+    // 单独为时间线设置格式
+    currentDateElement.textContent = formatTimelineDate(today);
+  }
 });
+
+// 保留原始完整日期格式（用于页脚等其他位置）
+function formatDate(date) {
+  return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+}
 </script>
       
     
