@@ -263,13 +263,16 @@
 
 })()
 
-// 平滑滚动
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function (e) {
-    e.preventDefault();
-    document.querySelector(this.getAttribute('href')).scrollIntoView({
-      behavior: 'smooth'
-    });
+// 修改平滑滚动逻辑
+document.querySelectorAll('.custom-nav .item').forEach(item => {
+  item.addEventListener('click', function() {
+    const target = document.querySelector(this.dataset.target);
+    if(target) {
+      window.scrollTo({
+        top: target.offsetTop - 70,
+        behavior: 'smooth'
+      });
+    }
   });
 });
 
@@ -338,7 +341,25 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 document.addEventListener('DOMContentLoaded', function() {
-  // 时间线Swiper
+  document.getElementById('year').textContent = new Date().getFullYear();
+});
+
+// 统一初始化音乐播放器
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.custom-music-player').forEach(container => {
+    try {
+      new MusicPlayer(container);
+    } catch (error) {
+      console.error('播放器初始化失败:', error);
+      const errorElem = document.createElement('div');
+      errorElem.style.color = 'red';
+      errorElem.textContent = '播放器加载失败，请刷新页面或检查网络连接';
+      container.prepend(errorElem);
+    }
+  });
+});
+  
+  // 原有时间线初始化代码
   const timelineSwiper = new Swiper('.timelineSwiper', {
     slidesPerView: 1,
     spaceBetween: 30,
@@ -362,4 +383,138 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
   });
+// 添加DOM加载监听
+document.addEventListener('DOMContentLoaded', function() {
+  // 修复audio元素选择器作用域
+  const audio = document.querySelector('.main-audio');
+  const playBtn = document.querySelector('.audio-container .play-btn');
+  const currentTime = document.querySelector('.current-time');
+  const duration = document.querySelector('.duration');
+  const progressBar = document.querySelector('.progress-bar');
+
+  // 时间格式化函数
+  function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    seconds = Math.floor(seconds % 60);
+    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
+  }
+
+  // 错误处理
+  audio.addEventListener('error', () => {
+    console.error('音频加载失败');
+    playBtn.innerHTML = '<i class="bx bx-error"></i>';
+    playBtn.disabled = true;
+  });
+
+  // 播放/暂停控制
+  playBtn.addEventListener('click', () => {
+    if (audio.paused) {
+      audio.play();
+      playBtn.innerHTML = '<i class="bx bx-pause"></i>';
+    } else {
+      audio.pause();
+      playBtn.innerHTML = '<i class="bx bx-play"></i>';
+    }
+  });
+
+  // 时间同步
+  audio.addEventListener('timeupdate', () => {
+    if(isNaN(audio.duration)) return;
+    const progress = (audio.currentTime / audio.duration) * 100;
+    progressBar.style.width = `${progress}%`;
+    if (currentTime) {
+      currentTime.textContent = formatTime(audio.currentTime);
+    }
+    if (duration) {
+      duration.textContent = formatTime(audio.duration);
+    }
+  });
+
+  // 进度条点击控制
+  progressBar.parentElement.addEventListener('click', (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const pos = (e.clientX - rect.left) / rect.width;
+    audio.currentTime = pos * audio.duration;
+  });
+
+  // 音频结束自动重置
+  audio.addEventListener('ended', () => {
+    playBtn.innerHTML = '<i class="bx bx-play"></i>';
+    progressBar.style.width = '0%';
+  });
+});
+
+// 头部添加模块导入
+
+
+// 音乐播放器类定义
+class MusicPlayer {
+  constructor(container) {
+    this.container = container;
+    this.audio = this.container.querySelector('audio');
+    this.playBtn = this.container.querySelector('.play-btn');
+    this.progressBar = this.container.querySelector('.progress-bar');
+    this.initEventListeners();
+  }
+
+  initEventListeners() {
+    // 播放/暂停控制
+    this.playBtn.addEventListener('click', () => this.togglePlay());
+    
+    // 进度条控制
+    this.container.querySelector('.progress-container').addEventListener('click', (e) => {
+      const rect = e.target.getBoundingClientRect();
+      const pos = (e.clientX - rect.left) / rect.width;
+      this.audio.currentTime = pos * this.audio.duration;
+    });
+
+    // 音频时间更新
+    this.audio.addEventListener('timeupdate', () => this.updateProgress());
+
+    // 音频结束处理
+    this.audio.addEventListener('ended', () => {
+      this.playBtn.innerHTML = '<i class="bx bx-play"></i>';
+      this.progressBar.style.width = '0%';
+    });
+
+    // 错误处理
+    this.audio.addEventListener('error', (e) => {
+      console.error('音频加载失败:', e);
+      this.playBtn.innerHTML = '<i class="bx bx-error"></i>';
+      this.playBtn.disabled = true;
+    });
+  }
+
+  togglePlay() {
+    if (this.audio.paused) {
+      this.audio.play();
+      this.playBtn.innerHTML = '<i class="bx bx-pause"></i>';
+    } else {
+      this.audio.pause();
+      this.playBtn.innerHTML = '<i class="bx bx-play"></i>';
+    }
+  }
+
+  updateProgress() {
+    const progress = (this.audio.currentTime / this.audio.duration) * 100;
+    this.progressBar.style.width = `${progress}%`;
+    this.container.querySelector('.remaining-time').textContent = 
+      this.formatTime(this.audio.duration - this.audio.currentTime);
+  }
+
+  formatTime(seconds) {
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `-${mins}:${secs.toString().padStart(2, '0')}`;
+  }
+}
+
+// 合并重复的初始化逻辑
+document.addEventListener('DOMContentLoaded', () => {
+  // 统一初始化方式
+  document.querySelectorAll('.audio-container').forEach(container => {
+    new MusicPlayer(container);
+  });
+
+  // 移除旧的初始化代码
 });
